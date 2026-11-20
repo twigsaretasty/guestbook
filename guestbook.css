@@ -52,6 +52,21 @@
         #c_rightButton - The right <button>
 */
 
+:root {
+    --midnight-blue: #191970;
+    --ocean-mist: #56b9a2;
+    --tropical-teal: #5FB0B7;
+    --dusty-denim: #6c91bfae;
+    --white-smoke: #F5F3F5;
+    --ditto-pink-lighter: #f0dbf9;
+    --ditto-pink-light: #D3BEDB;
+    --ditto-pink-dark: #cb99df;
+    --ditto-blue-light: #90CCEC;
+    --ditto-blue-dark: #6abfed;
+    --ditto-blue-darkest: #1594d8;
+    --ditto-pink-darkest: #a633d4;
+}
+
 /* Main */
 #c_widget {
     box-sizing: border-box;
@@ -59,7 +74,7 @@
     padding: 15px;
     overflow: auto;
     background-attachment: fixed;
-    font-family: 'Trebuchet MS';
+    font-family: monospace;
     font-size: 14px;
     color: #211F24;
 }
@@ -70,15 +85,16 @@
 	text-transform: lowercase;
 	text-align: center;
     background-color: white;
-    color: #CE98FB;
-    border: 1px solid #CE98FB;
+    color: var(--ditto-blue-darkest);
+    border: 1px solid var(--ditto-blue-darkest);
     border-radius: 5px;
 }
 #c_widget button:hover, #c_widget input[type=submit]:hover {
-    background-color: #FB96D8;
+    background-color: var(--ditto-blue-dark);
     color: white;
-    border: 1px solid #FB96D8;
+    border: 1px solid var(--ditto-blue-darkest);
 }
+
 #c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
 #c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
     background-color: white;
@@ -90,17 +106,54 @@
 #c_inputDiv {
     padding: 10px;
     text-transform: lowercase;
-    background-color: rgba(255, 255, 255, .8);
-    border: 1px dashed #CE98FB;
+    background-color: #90cceca9;
+    border: 2px solid var(--ditto-blue-dark);
     border-radius: 5px;
 }
-#c_container {margin-top: 10px;}
+
+#c_container {
+    margin-top: 10px;
+}
+
+#c_container > :nth-child(odd) {
+    background-color: #d3bedba8;
+    border: 2px solid var(--ditto-pink-dark);
+}
+
+#c_container > :nth-child(odd) .c-site {
+    color: var(--ditto-pink-darkest);
+}
+
+#c_container > :nth-child(odd) button {
+    color: var(--ditto-pink-darkest);
+    border-color: var(--ditto-pink-dark);
+}
+
+#c_container > :nth-child(odd) button:hover {
+    background-color: var(--ditto-pink-dark);
+    color: white;
+    border: 1px solid var(--ditto-pink-darkest);
+}
+
+#c_container > :nth-child(odd) .c-site:hover, 
+#c_container > :nth-child(even) .c-site:hover {
+    color: black;
+}
+
+#c_container > :nth-child(even) {
+    background-color: #90cceca9;
+    border: 2px solid var(--ditto-blue-dark);
+}
+
+
+#c_container > :nth-child(even) .c-site {
+    color: var(--ditto-blue-darkest);
+}
 
 #c_widgetTitle {
     margin: 0;
     padding: 0;
     font-style: italic;
-    text-decoration: underline;
 }
 
 .c-inputWrapper {
@@ -112,7 +165,7 @@
     padding: 4px;
     color: #5E2C49;
     border-radius: 4px;
-    border: 1px solid #CE98FB;
+    border: 1px solid var(--ditto-blue-darkest);
 	outline: none;
 }
 .c-input:focus {border: 1px solid #FB96D8;}
@@ -149,7 +202,6 @@
     margin: 0;
     margin-right: 10px;
     padding: 0;
-    text-decoration: underline;
 }
 .c-site {
     text-transform: lowercase;
