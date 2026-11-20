@@ -387,6 +387,8 @@ function createComment(data) {
         let site = document.createElement('a');
         site.innerText = s_websiteText;
         site.href = data.Website;
+        site.target = '_blank';
+        site.rel = 'noopener noreferrer';
         site.className = 'c-site';
         comment.appendChild(site);
     }
@@ -477,6 +479,7 @@ function getMonthNum(month) {
 // Handle making replies
 const link = document.createElement('a');
 link.href = '#c_inputDiv';
+link.target = '_self';
 function openReply(id) {
     if (c_replyingText.style.display == 'none') {
         c_replyingText.innerHTML = s_replyingText + ` ${id.split('|--|')[0]}...`;
